@@ -2,6 +2,110 @@
 <?php
 //Commentaire
 
+
+echo "Triangle 1:";
+echo "<br>";
+$s = 8;
+for($i = 0; $i < $s; $i++) {
+
+    for($f = 0; $f < $i; $f++) {
+        echo "*";
+    }
+    echo "<br>";
+}
+
+echo "<br>";
+echo "Triangle 2:";
+echo "<br>";
+
+
+for($i = 0; $i < $s; $i++) {
+
+    for($f = 0; $f < $s - $i; $f++) {
+        echo "*";
+    }
+    echo "<br>";
+}
+
+
+echo "<br>";
+echo "Triangle 3:";
+echo "<br>";
+
+for($i = 1; $i <= $s; $i++) {
+    for($j = 0; $j < $i; $j++) {
+
+        if($i != $s) {
+            if($j == 0 || $j == $i - 1) {
+                echo "*";
+            }
+            else {
+                echo "&nbsp;&nbsp;";
+            }
+        }
+
+        else {
+            echo "*";
+        }
+    }
+    echo "<br>";
+}
+
+
+echo "<br>";
+echo "Exo4: ";
+echo "<br>";
+
+function facto($n)
+{
+  if ($n == 0) {
+    return 1;
+  } else {
+    return $n * facto($n - 1);
+  }
+}
+echo "Factorielle : " . facto(7);
+echo "<br>";
+echo "<br>";
+echo "Exo5: ";
+echo "<br>";
+
+$tabeau1 = [1, 2, 3];
+$tabeau2 = [4, 5, 6];
+function somme_tableaux(array $tabeau1, array $tabeau2) {
+    $resultat = array();
+    for ($i = 0; $i < count($tabeau1); $i++) {
+        $resultat[] = $tabeau1[$i] + $tabeau2[$i];
+    }
+    return $resultat;
+}
+
+print_r(somme_tableaux($tabeau1, $tabeau2));
+echo "<br>";
+echo "<br>";
+echo "Exo6: ";
+echo "<br>";
+
+$Tableau = array(1, 2, 3, 4, 5, 5, 5, 7, 8, 12, 14, 42, 1337, 18, 6357, 61384, 973, 16897);
+
+for($X = count($Tableau) - 2;$X >= 0; $X--) {
+    for($J = 0; $J <= $X; $J++) {
+        if($Tableau[$J + 1] < $Tableau[$J]) {
+            $t = $Tableau[$J + 1];
+            $Tableau[$J + 1] = $Tableau[$J];
+            $Tableau[$J] = $t;
+        }
+    }
+}
+
+echo "<br /> POV: le tableau est trié: ";
+for($L = 0; $L < count($Tableau); $L++) {
+echo $Tableau[$L ]. " | ";
+}
+echo "<br />";
+
+
+
 $str = 'Ceci est une chaîne de caractère';
 
 $e = 1;
